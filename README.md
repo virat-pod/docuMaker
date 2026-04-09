@@ -1,36 +1,147 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# DocuMaker
 
-## Getting Started
+A modern, developer-friendly document generator web app that lets users create professional invoices, resumes, certificates, and quotations with ease — and export them instantly as PDFs.
 
-First, run the development server:
+---
+
+## ✨ Overview
+
+**DocuMaker** is built for speed, simplicity, and clean design. Whether you're generating business invoices or polished resumes, the app provides structured templates and seamless PDF export — all within a smooth, responsive interface.
+
+---
+
+## 🚀 Features
+
+- Create **4 document types**
+  - Invoice
+  - Quotation
+  - Resume
+  - Certificate
+- Instant **PDF download** (server-side generation)
+- Secure **user authentication** (sign up, sign in, delete account)
+- Save, manage, and revisit documents anytime
+- Clean and professional **ready-to-use templates**
+- Modern **dark UI** with yellow/orange accents
+- Fully **responsive design** (optimized for larger screens)
+- Preview templates **without an account**
+- Completely **free to use**
+
+---
+
+## 🔐 Protected Routes
+
+The following routes require authentication:
+
+- `/documents` — Access saved documents
+- `/use/*` — Create and edit documents
+
+---
+
+## 🛠️ Tech Stack
+
+| Category        | Technology                          |
+|----------------|------------------------------------|
+| Framework      | Next.js 16 (App Router, Turbopack) |
+| Language       | JS/TS                        |
+| Authentication | Clerk                              |
+| Styling        | Tailwind CSS                       |
+| Database       | Prisma + PostgreSQL                |
+| PDF Engine     | Server-side generation             |
+| Hosting        | Vercel                             |
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/virat-pod/docuMaker.git
+cd documaker
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Setup environment variables
+
+Create a `.env` file in the root directory:
+
+```env
+DATABASE_URL=your_postgresql_connection_string
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_key
+CLERK_SECRET_KEY=your_secret
+```
+
+### 4. Setup database
+
+```bash
+npx prisma generate
+npx prisma migrate dev
+```
+
+### 5. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📦 Project Structure (Simplified)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+/app            → App Router pages & layouts
+/components     → Reusable UI components
+/lib            → Database, utilities, configs
+/prisma         → Prisma schema & migrations
+/styles         → Global styles
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📄 Document Workflow
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. User selects a template  
+2. Fills in required data  
+3. Preview updates in real-time  
+4. Server generates PDF  
+5. Download instantly  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🎯 Design Philosophy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Minimal distractions, maximum clarity  
+- Fast interactions with clean UI  
+- Practical features over unnecessary complexity  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📌 Future Improvements
+
+- Template customization (colors, fonts)  
+- More document types  
+- Cloud storage integration  
+- Shareable document links  
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to fork the repo, open issues, or submit pull requests.
+
+---
+
+## 📜 License
+
+This project is open-source and available under the MIT License.
+
+---
+
+## 💡 Final Note
+
+DocuMaker is built to simplify document creation — fast, clean, and reliable.
