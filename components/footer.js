@@ -82,7 +82,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com/ViratPod"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-zinc-800/50 hover:bg-zinc-700 flex items-center justify-center text-zinc-400 hover:text-white transition-all duration-200 hover:scale-110"
@@ -114,7 +114,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/pricing"
+                  href="/"
                   className="text-sm text-zinc-400 hover:text-white transition-colors"
                 >
                   Pricing
@@ -122,7 +122,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/features"
+                  href="/"
                   className="text-sm text-zinc-400 hover:text-white transition-colors"
                 >
                   {" "}
@@ -148,7 +148,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/docs"
+                  href="/"
                   className="text-sm text-zinc-400 hover:text-white transition-colors"
                 >
                   Documentation
@@ -156,7 +156,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/support"
+                  href="/"
                   className="text-sm text-zinc-400 hover:text-white transition-colors"
                 >
                   Support
@@ -171,13 +171,10 @@ const Footer = () => {
             © {new Date().getFullYear()} DocuMaker. Open source & free forever.
           </div>
           <div className="flex gap-6 text-xs text-zinc-500">
-            <Link
-              href="/privacy"
-              className="hover:text-white transition-colors"
-            >
+            <Link href="/" className="hover:text-white transition-colors">
               Privacy
             </Link>
-            <Link href="/terms" className="hover:text-white transition-colors">
+            <Link href="/" className="hover:text-white transition-colors">
               Terms{" "}
             </Link>
           </div>
