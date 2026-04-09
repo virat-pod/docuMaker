@@ -1,0 +1,91 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/db/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           Int           @id @default(autoincrement())
+  clerkId      String        @unique
+  name         String
+  email        String        @unique
+  createdAt    DateTime      @default(now())
+  certificates Certificate[]
+  invoices     Invoice[]
+  quotations   Quotation[]
+  resumes      Resume[]
+}
+
+model Invoice {
+  id          Int      @id @default(autoincrement())
+  userId      Int
+  companyName String
+  address     String
+  invoiceNo   String
+  billTo      String
+  email       String?
+  dueDate     DateTime
+  items       Json
+  paymentNote String
+  total       Int
+  type        String
+  createdAt   DateTime @default(now())
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Quotation {
+  id           Int      @id @default(autoincrement())
+  userId       Int
+  companyName  String
+  companyPhone String?
+  companyEmail String?
+  clientName   String
+  clientPhone  String?
+  quoteNo      String
+  dueDate      DateTime
+  validDays    Int?
+  items        Json
+  note         String?
+  total        Int
+  signature    String?
+  type         String
+  createdAt    DateTime @default(now())
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Resume {
+  id         Int      @id @default(autoincrement())
+  userId     Int
+  profilePic String?
+  initials   String?
+  name       String
+  title      String
+  contact    Json
+  skills     Json?
+  experience Json?
+  education  Json?
+  type       String
+  createdAt  DateTime @default(now())
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Certificate {
+  id            Int      @id @default(autoincrement())
+  userId        Int
+  institute     String
+  certType      String
+  recipientName String
+  courseName    String
+  duration      String?
+  seal          String?
+  sig1Name      String?
+  sig1Title     String?
+  sig2Name      String?
+  sig2Title     String?
+  type          String
+  createdAt     DateTime @default(now())
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
